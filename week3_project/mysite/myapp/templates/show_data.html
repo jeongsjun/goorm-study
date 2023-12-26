@@ -1,0 +1,27 @@
+<html>
+<body>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>URL</th>
+            <th>Writer</th>
+            <th>Date</th>
+            <th>Content</th>
+        </tr>
+        {% load static %}
+        {% for d in data %}
+        <tr>
+            <td>{{ d.title }}</td>
+            <td>{{ d.url }}</td>
+            <td>{{ d.writer }}</td>
+            <td>{{ d.date }}</td>
+            <td>{{ d.content }}</td>
+            <td>
+                <img src="{% static d.wordcloud %}" alt="WordCloud">
+                <img src="{% static d.bar %}" alt="Bar">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
